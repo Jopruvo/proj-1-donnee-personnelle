@@ -1,27 +1,27 @@
-import donnees
-import utilisateurs
-import noeud
+from donnees import data
+from utilisateurs import user
+from noeud import node
 
-class Tree:
-    def __init__(self, node):
-        self.node = node
-    
-    def getNode(self):
-        return self.node
-    
-    def afficherTree(self):
-        print('Tree : (' + str(self.getNode()) + ')')
+# definition des objets :
 
-data_1 = donnees.donnees(1, 200)
-data_2 = donnees.donnees(2, 400)
-data_3 = donnees.donnees(3, 50)
-data_4 = donnees.donnees(4, 100)
+# données :
+data_1 = data(1, 200)
+data_2 = data(2, 400)
+data_3 = data(3, 50)
+data_4 = data(4, 100)
 
-noeud_1 = noeud.noeud(1, 250, [], [[1],[]])
-noeud_2 = noeud.noeud(2, 402, [], [[2],[]])
-noeud_3 = noeud.noeud(3, 150, [], [[3],[]])
+data_list = [data_1, data_2, data_3, data_4]
 
-nodeTree = Tree([noeud_1, noeud_2, noeud_3])
+# utilisateurs :
+user_1 = user(1, [1, 3])
+user_2 = user(2, [2])
+user_3 = user(3, [])
 
-user_1 = utilisateurs.utilisateur(1, [data_1, data_2, data_3, data_4], noeud_1.getID())
-user_2 = utilisateurs.utilisateur(2, [data_2, data_4], noeud_2.getID())
+user_list = [user_1, user_2, user_3]
+
+# noeuds :
+node_1 = node(1, 300, [], [[],[]])
+node_2 = node(2, 50, [], [[],[]])
+node_3 = node(3, 650, [], [[],[]])
+
+node_list = [node_1, node_2, node_3]

@@ -1,4 +1,7 @@
 class donnees:
+
+    # une données est definie par un ID unique et une taille :
+
     def __init__(self, id, taille):
         self.id = id
         self.taille = taille
@@ -8,6 +11,3 @@ class donnees:
     
     def getTaille(self):
         return self.taille
-    
-    def afficher_donnees(self):
-        print("Données : (" + str(self.getID()) + ", " + str(self.getTaille()) + ")")
