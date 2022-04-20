@@ -15,16 +15,6 @@ class utilisateur:
     
     def getNoeudSystem(self):
         return self.noeud_system
-
-    '''
-    def placement(self, aTree):
-        N = []
-        for i in range (len(self.getListeDonnees())):
-            for j in range (len(aTree.getNode())):
-                if self.getListeDonnees()[i].getTaille() == aTree.getNode()[j].getCpMem() :
-                    ((aTree.getNode()[j]).getListeDonneesLocals()).append((self.getListeDonnees()[i]).getID())
-        return N
-    '''
     
     def afficher_utilisateur(self):
         print("Utilisateur : (" + str(self.getID()) + ", " + str(self.getListeDonnees()) + ", " + str(self.getNoeudSystem()) + ")")
