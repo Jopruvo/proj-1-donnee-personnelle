@@ -23,5 +23,22 @@ user_list = [user_1, user_2, user_3]
 node_1 = node(1, 300, [], [[],[]])
 node_2 = node(2, 50, [], [[],[]])
 node_3 = node(3, 650, [], [[],[]])
+node_4 = node(4, 100, [], [[],[]])
 
-node_list = [node_1, node_2, node_3]
+node_list = [node_1, node_2, node_3, node_4]
+
+# ajout complémentaires :
+node_list[0].addUser(user_list[0])
+node_list[2].addUser(user_list[1])
+
+node_list[0].addNodeVoisin(node_list[1])
+node_list[0].addNodeVoisin(node_list[2])
+node_list[1].addNodeVoisin(node_list[0])
+node_list[1].addNodeVoisin(node_list[2])
+node_list[2].addNodeVoisin(node_list[0])
+node_list[2].addNodeVoisin(node_list[1])
+node_list[2].addNodeVoisin(node_list[3])
+node_list[3].addNodeVoisin(node_list[2])
+
+user_list[0].addNode(node_list[0])
+user_list[1].addNode(node_list[2])

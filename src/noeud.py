@@ -2,7 +2,7 @@ class noeud:
 
     # un noeud est défini par un ID unique, la capacité mémoire d'un noeud (dans lequel il a la capacité d'acceuillir un ou plusieurs
     # objets de type 'donnees'), une liste de données stockées, et une liste de liste (ou tableau) dans lequel la première est une liste
-    # d'ID 'utilisateurs et la seconde une liste de noeud voisins :
+    # d'ID 'utilisateurs qui y ont accés et la seconde une liste de noeud voisins :
 
     def __init__(self, id, capacite_memoire, liste_donnees_locals, liste_access):
         self.id = id
