@@ -2,12 +2,14 @@ from donnees import data
 from utilisateurs import user
 from noeud import node
 
+#__________________________________________________________________________
 # definition des objets :
+#__________________________________________________________________________
 
 # données :
-data_1 = data(1, 200)
-data_2 = data(2, 400)
-data_3 = data(3, 50)
+data_1 = data(1, 50)
+data_2 = data(2, 250)
+data_3 = data(3, 150)
 data_4 = data(4, 100)
 
 data_list = [data_1, data_2, data_3, data_4]
@@ -22,8 +24,8 @@ user_list = [user_1, user_2, user_3]
 # noeuds :
 node_1 = node(1, 300, [], [[],[]])
 node_2 = node(2, 50, [], [[],[]])
-node_3 = node(3, 650, [], [[],[]])
-node_4 = node(4, 100, [], [[],[]])
+node_3 = node(3, 100, [], [[],[]])
+node_4 = node(4, 500, [], [[],[]])
 
 node_list = [node_1, node_2, node_3, node_4]
 
