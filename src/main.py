@@ -57,7 +57,7 @@ def needData():
             node_sys = user.getNoeudSystem()
 
             if user.getNotStockedData() != [] :
-                node_sys.getListeDonneesLocals.append(user.getNotStockedData()[0])
+                node_sys.setListeDonneesLocals(user.getNotStockedData()[0])
                 user.addData(user.getListeDonnees()[0])
 
 needData()

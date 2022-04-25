@@ -3,7 +3,7 @@ class user:
     # un utilisateur est défini à l'aide d'un ID unique, par une liste de données auxquelles il peut accéder
     # et un noeud qui lui est accessible :
 
-    def __init__(self, id, liste_donnees, noeud_system = None):
+    def __init__(self, id, liste_donnees = [], noeud_system = []):
         self.id = id
         self.liste_donnees = liste_donnees
         self.noeud_system = noeud_system
@@ -17,6 +17,12 @@ class user:
     
     def getNoeudSystem(self):
         return self.noeud_system
+
+    def setListeDonnees(self, liste_donnees):
+        self.liste_donnees = liste_donnees
+
+    def setNoeudSystem(self, noeud_system):
+        self.noeud_system = noeud_system
 
     def addNode(self, node):
         self.noeud_system = node
