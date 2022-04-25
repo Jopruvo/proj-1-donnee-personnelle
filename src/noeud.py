@@ -4,7 +4,7 @@ class noeud:
     # objets de type 'donnees'), une liste de données stockées, et une liste de liste (ou tableau) dans lequel la première est une liste
     # d'ID 'utilisateurs qui y ont accés et la seconde une liste de noeud voisins :
 
-    def __init__(self, id, capacite_memoire, liste_donnees_locals, liste_access):
+    def __init__(self, id, capacite_memoire, liste_donnees_locals = None, liste_access):
         self.id = id
         self.capacite_memoire = capacite_memoire
         self.liste_donnees_locals = liste_donnees_locals

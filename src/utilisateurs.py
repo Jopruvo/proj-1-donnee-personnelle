@@ -7,6 +7,7 @@ class utilisateur:
         self.id = id
         self.liste_donnees = liste_donnees
         self.noeud_system = noeud_system
+        self.notStockedData = liste_donnees    # permet plus facilement de traiter les données interressé par un utilisateur plutot que de manipuler liste_donnees
         
     def getID(self):
         return self.id
@@ -19,3 +20,10 @@ class utilisateur:
 
     def addNode(self, node):
         self.noeud_system = node
+
+    def getNotStockedData(self):
+        return self.notStockedData
+
+    def addData(self, data):
+        if data in self.notStockedData:
+            self.notStockedData.remove(data)

@@ -44,3 +44,18 @@ node_list[3].addNodeVoisin(node_list[2])
 
 user_list[0].addNode(node_list[0])
 user_list[1].addNode(node_list[2])
+
+
+#__________________________________________________________________________
+# fonctions
+#__________________________________________________________________________
+
+# fonction qui donne à tous les utilisateurs, un systeme de noeud qui contient toutes les données dont ils ont besoins :
+def needData():
+    for user in user_list:
+        if user.getNoeudSystem() != None :
+            node_sys = user.getNoeudSystem()
+
+            if user.getNotStockedData() != [] :
+                node_sys.getListeDonneesLocals.append(user.getNotStockedData()[0])
+                user.addData(user.getListeDonnees()[0])
