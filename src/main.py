@@ -59,3 +59,5 @@ def needData():
             if user.getNotStockedData() != [] :
                 node_sys.getListeDonneesLocals.append(user.getNotStockedData()[0])
                 user.addData(user.getListeDonnees()[0])
+
+needData()

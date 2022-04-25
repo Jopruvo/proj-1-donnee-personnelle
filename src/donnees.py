@@ -1,4 +1,4 @@
-class donnees:
+class data:
 
     # une données est definie par un ID unique et une taille :
 

@@ -1,4 +1,4 @@
-class utilisateur:
+class user:
 
     # un utilisateur est défini à l'aide d'un ID unique, par une liste de données auxquelles il peut accéder
     # et un noeud qui lui est accessible :
