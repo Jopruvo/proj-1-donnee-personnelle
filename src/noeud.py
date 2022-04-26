@@ -22,6 +22,12 @@ class node:
     def getListeAccess(self):
         return self.liste_access
 
+    def getListeAccessUsers(self):
+        return self.liste_access[0]
+
+    def getListeAccessVoisin(self):
+        return self.liste_access[1]
+
     def addUser(self, user):
         self.liste_access[0].append(user)
 
