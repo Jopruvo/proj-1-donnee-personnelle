@@ -50,52 +50,47 @@ user_list[1].addNode(node_list[2])
 # fonctions
 #__________________________________________________________________________
 
-# fonction qui donne à tous les utilisateurs, un systeme de noeud qui contient toutes les données dont ils ont besoins :
-def needData():
-    for user in user_list:
-        if user.getNoeudSystem() != None:
-            node_sys = user.getNoeudSystem()
-            if user.getNotStockedData() != []:
-                node_sys.setListeDonneesLocals(user.getNotStockedData()[0])
-                user.addData(user.getListeDonnees()[0])
+# methode qui donne à tous les utilisateurs, un systeme de noeud qui contient toutes les données dont ils ont besoins :
+for user in user_list:
+    if user.getNoeudSystem() != None:
+        node_sys = user.getNoeudSystem()
+        if user.getNotStockedData() != []:
+            node_sys.setListeDonneesLocals(user.getNotStockedData()[0])
+            user.addData(user.getListeDonnees()[0])
 
-needData()
 
 
 # fonction qui prend les noeuds vides et les ajoutes à une liste :
 def getEmptyNode(nodeList):
     empty_node = []
     for node in nodeList:
-        if node.getListeDonneesLocals() == None:
+        if node.getListeDonneesLocals() == []:
             empty_node.append(node)
     return empty_node
 
 
-# fonction qui donne à tous les noeuds les data et les place en fonction de l'interet des utilisateurs :
-def getData():
-    for user in user_list:
-        node_sys = user.getNoeudSystem()
-        if user.getNotStockedData() != []:
-            empty_node_voisin = getEmptyNode(node_sys.getListeAccessVoisin())
-            if empty_node_voisin != []:
-                empty_node_voisin[0].setListeDonneesLocals(user.getNotStockedData()[0])
-                user.addData(user.getNotStockedData()[0])
-                print('Le noeud voisin vide de ' + str(node_sys.getID()) + ' est ' + str(empty_node_voisin[0].getID()))
-                print(empty_node_voisin[0].getListeDonneesLocals())
+# methode qui donne à tous les noeuds les data et les place en fonction de l'interet des utilisateurs :
 
-getData()
+for user in user_list:
+    node_sys = user.getNoeudSystem()
+    if user.getNotStockedData() != []:
+        empty_node_voisin = getEmptyNode(node_sys.getListeAccessVoisin())
+        if empty_node_voisin != []:
+            empty_node_voisin[0].setListeDonneesLocals(user.getNotStockedData()[0])
+            user.addData(user.getNotStockedData()[0])
+            print('Le noeud voisin vide de ' + str(node_sys.getID()) + ' est ' + str(empty_node_voisin[0].getID()))
+            print(empty_node_voisin[0].getListeDonneesLocals())
 
 
-# fonction de distribution du reste des données :
-def distrib():
-    empty_nodes = getEmptyNode(node_list)
-    for user in user_list:
-        if user.getNotStockedData() != []:
-            for d in user.getNotStockedData():
-                empty_nodes[0].setListeDonneesLocals(d)
-                empty_nodes.remove(empty_nodes[0])
-                user.addData(user.getListeDonnees()[0])
-    for i in node_list:
-        print('Node : ' + str(i.getID()) + ' contient les data : ' + str(i.getListeDonneesLocals()))
 
-distrib()
+# methode de distribution du reste des données :
+empty_nodes = getEmptyNode(node_list)
+
+for user in user_list:
+    if user.getNotStockedData() != []:
+        for d in user.getNotStockedData():
+            empty_nodes[0].setListeDonneesLocals(d)
+            empty_nodes.remove(empty_nodes[0])
+            user.addData(user.getListeDonnees()[0])
+for i in node_list:
+    print('Node : ' + str(i.getID()) + ' contient les data : ' + str(i.getListeDonneesLocals()))
