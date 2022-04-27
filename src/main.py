@@ -83,6 +83,8 @@ def getData():
                 print('Le noeud voisin vide de ' + str(node_sys.getID()) + ' est ' + str(empty_node_voisin[0].getID()))
                 print(empty_node_voisin[0].getListeDonneesLocals())
 
+getData()
+
 
 # fonction de distribution du reste des données :
 def distrib():
@@ -95,3 +97,5 @@ def distrib():
                 user.addData(user.getListeDonnees()[0])
     for i in node_list:
         print('Node : ' + str(i.getID()) + ' contient les data : ' + str(i.getListeDonneesLocals()))
+
+distrib()
